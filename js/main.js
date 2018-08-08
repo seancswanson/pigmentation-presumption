@@ -8,6 +8,9 @@
   var targetColorHeading = document.querySelector(".rgb-to-guess");
   var targetColor;
 
+  var menuTop = document.querySelector('.menu-top');
+  var gameArea = document.querySelector('.game-area');
+
   var App = {
     initGame: function() {
       this.makeRGBString();
@@ -47,8 +50,18 @@
       return cleanTargetColorRGB;
     },
 
+    checkMatch: function() {
+      if (this.style.background === targetColor) {
+        menuTop.style.backgroundColor = this.style.background;
+        gameArea.style.backgroundColor = this.style.background;
+      }
+      console.log(this.style.background);
+    },
+
     setClickHandlers: function() {
-      
+      for (var i = 0; i <= colorSquares.length - 1; i++) {
+        colorSquares[i].addEventListener('click', this.checkMatch);
+      }
     }
   };
 
