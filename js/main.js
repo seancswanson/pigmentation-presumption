@@ -9,18 +9,19 @@
   var targetColor;
 
   var menuTop = document.querySelector('.menu-top');
+  var menuMessage = document.querySelector('.menu-message');
   var gameArea = document.querySelector('.game-area');
 
   var App = {
     initGame: function() {
       this.makeRGBString();
-      this.setClickHandlers();
+      this.setHandlers();
     },
 
     setSquareColors: function(rgbString) {
       var self = this;
       colorSquares.forEach(function(colorSquare, i) {
-        colorSquare.style.background = colors[i];
+        colorSquare.style.backgroundColor = colors[i];
       });
     },
 
@@ -51,15 +52,38 @@
     },
 
     checkMatch: function() {
-      if (this.style.background === targetColor) {
-        menuTop.style.backgroundColor = this.style.background;
-        gameArea.style.backgroundColor = this.style.background;
+      if (this.style.backgroundColor === targetColor) {
+        menuTop.style.backgroundColor = this.style.backgroundColor;
+        menuMessage.textContent = 'Correct!';
+        this.style.pointerEvents = 'none';
+        App.winningTileAnimation();
+      } else {
+        this.style.backgroundColor = '#232323';
+        this.style.pointerEvents = 'none';
+        menuMessage.textContent = 'Try again!';
       }
-      console.log(this.style.background);
+      console.log(this.style.backgroundColor);
     },
 
-    setClickHandlers: function() {
+    winningTileAnimation: function() {
+      var i = 0;
+      (function delayedAnimation() {
+        colorSquares[i].style.backgroundColor = targetColor;
+        i++;
+        if (i < colorSquares.length) {
+          setTimeout(delayedAnimation, 130);
+        }
+      })();
+    },
+
+    setHandlers: function() {
       for (var i = 0; i <= colorSquares.length - 1; i++) {
+        colorSquares[i].addEventListener('mouseover', function() {
+          this.classList.add('tile-hover');
+        });
+        colorSquares[i].addEventListener('mouseout', function() {
+          this.classList.remove('tile-hover');
+        });
         colorSquares[i].addEventListener('click', this.checkMatch);
       }
     }

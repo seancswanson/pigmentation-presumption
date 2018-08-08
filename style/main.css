@@ -17,7 +17,6 @@ body {
 
 .menu-container {
   text-align: center;
-  border: 1px solid blue;
 }
 
 .menu-top {
@@ -26,9 +25,15 @@ body {
   padding: 10px;
 }
 
-.menu-bottom p{
+.menu-button {
   color: rgb(83,132,179);
   display: inline-block;
+  padding: 5px;
+}
+
+.menu-message {
+  font-size: 11px;
+  text-transform: uppercase;
 }
 
 .game-area {
@@ -54,22 +59,17 @@ body {
   background: green;
   border-radius: 12px;
   transition: all .1s ease-in-out;
+  border: 2px solid transparent;
 }
 
-.color-square-tile:hover {
-  box-shadow: 0 0 2px 4px white;
+
+.tile-hover {
+  border: 2px solid white;
   cursor: pointer;
 }
+
 
 .uppercase {
   text-transform: uppercase;
 }
-
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 0 white;
-  }
-  100% {
-    box-shadow: 0 0 3px 4px white;
-  }
 };
