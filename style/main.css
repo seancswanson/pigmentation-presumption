@@ -13,7 +13,9 @@ body {
   width: inherit;
   height: inherit;
 
-  font-family: sans-serif;
+  font-family: "Monteserrat", "Avenir", sans-serif;
+
+  text-transform: uppercase;
 }
 
 .menu-container {
@@ -24,17 +26,24 @@ body {
   padding: 10px;
 
   color: white;
-    background-color: rgb(83,132,179)
+  background-color: rgb(83,132,179)
+}
+
+.thin {
+  font-weight: 100 !important;
 }
 
 .menu-button {
   display: inline-block;
 
-  padding: 5px;
+  font-weight: bold;
+
+  padding: 5px 15px;
 
   cursor: pointer;
 
   color: rgb(83,132,179);
+  margin-left: -4px;
 }
 
 .menu-button:hover {
@@ -46,6 +55,10 @@ body {
   text-transform: uppercase;
 
   font-size: 11px;
+}
+
+.rgb-to-guess {
+  font-size: 2.2em;
 }
 
 .game-area {
@@ -90,7 +103,21 @@ body {
   border: 2px solid white;
 }
 
-
 .uppercase {
   text-transform: uppercase;
+}
+
+.credits {
+  display: inline-block;
+  color: white;
+  position: absolute;
+  left: 6px;
+  bottom: 2px;
+}
+
+.github {
+  display: inline-block;
+  width: 50px;
+  vertical-align: bottom;
+  margin-left: 20px;
 }
