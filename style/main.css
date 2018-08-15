@@ -13,9 +13,9 @@ body {
   width: inherit;
   height: inherit;
 
-  font-family: "Monteserrat", "Avenir", sans-serif;
-
   text-transform: uppercase;
+
+  font-family: "Monteserrat", "Avenir", sans-serif;
 }
 
 .menu-container {
@@ -36,14 +36,14 @@ body {
 .menu-button {
   display: inline-block;
 
-  font-weight: bold;
-
+  margin-left: -4px;
   padding: 5px 15px;
 
   cursor: pointer;
 
   color: rgb(83,132,179);
-  margin-left: -4px;
+
+  font-weight: bold;
 }
 
 .menu-button:hover {
@@ -68,7 +68,7 @@ body {
 
   text-align: center;
 
-  background: rgb(35,34,35);
+  background: rgb(35, 34, 35);
 }
 
 .color-square-container {
@@ -108,16 +108,20 @@ body {
 }
 
 .credits {
-  display: inline-block;
-  color: white;
   position: absolute;
-  left: 6px;
   bottom: 2px;
+  left: 6px;
+
+  display: inline-block;
+
+  color: white;
 }
 
 .github {
   display: inline-block;
+
   width: 50px;
-  vertical-align: bottom;
   margin-left: 20px;
+
+  vertical-align: bottom;
 }
